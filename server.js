@@ -9,6 +9,7 @@ var User = require('./models/User.js');
 var Post = require('./models/Post.js');
 var auth = require('./auth.js');
 
+const port = process.env.PORT || 3000;
 // var posts = [{ message: 'hello' }, { message: 'hi' }];
 
 // app.use(cors());
@@ -174,4 +175,7 @@ mongoose
 // app.use('/auth', auth);
 app.use('/auth', auth.router);
 
-app.listen(3000);
+// app.listen(3000);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
